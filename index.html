@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Footie Wonders</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="body-wrapper">
+
+    <div class="intro-section section">
+      <div id="center-text">
+      	<div id="BigTitle" >Footie Wonders</div>
+  	  	<h3 class="title"> Welcome to the page of the Footballing World. </h3>
+  	  </div>
+      <div class="info-wrapper">
+        <div>
+                
+          <p>Here you will find the latest news, scorelines, and debates about the hottest matchups of different teams and players across the globe. Feel free to enter discussions and debates about selected topics (posted daily by moderators) regarding the trending football topics. Be fair, respect others, and most importantly enjoy the passion we share for the beautiful game! </p> 
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-section section">
+      <h2>Projects</h2>
+      <div class="projects-wrapper">
+        <div class="project-box">
+          <h4>Project 1</h4>
+          <button class="click-me">Read more</button>
+          <p class="description hide">insert project description. insert project description. insert project description.</p>
+        </div>
+        <div class="project-box">
+          <h4>Project 1</h4>
+          <button class="click-me">Read more</button>
+          <p class="description hide">insert project description</p>
+        </div>
+        <div class="project-box">
+          <h4>Project 1</h4>
+          <button class="click-me">Read more</button>
+          <p class="description hide">insert project description. insert project description. insert project description</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-section section">
+      <h2>Contact</h2>
+      <p>Reach me at teresaliu20@gmail.com.</p>
+      <a href="/">Github</a>
+      <a href="/">Linkedin</a>
+      <a href="/">Facebook</a>
+    </div>
+
+  </div>
+  <script src="./scripts/jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      console.log("hello!")
+      $(".click-me").click(function(e) {
+        e.preventDefault();
+        var target = $(e.target)
+        target.next(".description").toggle();
+      })
+    })
+  </script>
+</body>
+</html>

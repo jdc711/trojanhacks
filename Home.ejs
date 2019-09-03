@@ -1,0 +1,72 @@
+
+<!doctype html>
+
+<html>
+  <head>
+    <title>commentboard</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1><a href="/">Commentboard</a></h1>
+
+      <hr/>
+
+      <form method="POST" action="/tip/new">
+        <input type="text" placeholder="Topic of your comment, for example: class code/professor/dorm..." class="text-input name-input" name="author" value="<%= author %>"/>
+        <textarea class="text-input content-input" placeholder="Type your comment" name="content"><%= content %></textarea>
+        
+
+        <div class="submit-input">
+          <input type="submit" class="submit-btn"/>
+        </div>
+
+        <% if (locals.errors) { %>
+          <div class="error">
+            <% for(var i = 0;i < errors.length; i++) { %>
+              <p><%= errors[i] %></p>
+            <% } %>
+          </div>
+        <% } %>
+      </form>
+
+      <hr/>
+      <form method="POST" action="/search/teacher">
+        
+        <input type="text" placeholder="Topic you want to search" class="text-input name-input"/ name="teacherspecify">
+        
+
+        <div class="submit-input">
+          <input type="submit" class="submit-btn"/>
+        </div>
+
+        <!-- TODO: Errors -->
+      </form>
+
+      <div class="tips">
+        <% for(var i = 0; i < tips.length; i++) { %>
+          <div class="tip">
+              <p class="content">
+                <b>
+                  <%= tips[i].author %>
+                </b>
+              </p>
+
+              <p class="details">
+                <%= tips[i].content %>
+                <br/>
+
+                <a href="/tip/<%= tips[i]._id %>" class="permalink">
+                  <%= moment(tips[i].created).format('MMMM DD, hh:mm a') %>
+                </a>
+              </p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
